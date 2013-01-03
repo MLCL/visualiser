@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sussexnlp/!svn/ver/631/jeremy/trunk/Dissertation/src/distancemodel/exceptions
+END
+ClockInconsistentException.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sussexnlp/!svn/ver/631/jeremy/trunk/Dissertation/src/distancemodel/exceptions/ClockInconsistentException.java
+END
+WrongDimensionsException.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sussexnlp/!svn/ver/631/jeremy/trunk/Dissertation/src/distancemodel/exceptions/WrongDimensionsException.java
+END

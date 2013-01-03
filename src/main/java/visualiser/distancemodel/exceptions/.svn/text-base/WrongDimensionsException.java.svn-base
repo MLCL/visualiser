@@ -1,0 +1,28 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package distancemodel.exceptions;
+
+/**
+ * @author Jeremy Reffin
+ * V2.0 20110822
+ */
+public class WrongDimensionsException extends RuntimeException {
+
+    /**
+     * Creates a new instance of <code>WrongDimensionsException</code> without detail message.
+     */
+    public WrongDimensionsException() {
+    }
+
+
+    /**
+     * Constructs an instance of <code>WrongDimensionsException</code> with the specified detail message.
+     * @param msg the detail message.
+     */
+    public WrongDimensionsException(String msg) {
+        super(msg);
+    }
+}

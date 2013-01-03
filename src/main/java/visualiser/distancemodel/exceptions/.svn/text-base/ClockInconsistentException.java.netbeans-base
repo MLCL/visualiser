@@ -1,0 +1,27 @@
+/*
+ * Thrown when the clocks on different Terms are incomsistent with each other.
+ */
+package distancemodel.exceptions;
+
+/**
+ * @author Jeremy Reffin
+ * V2.0 20110822
+ */
+public class ClockInconsistentException extends RuntimeException {
+
+    /**
+     * Creates a new instance of <code>ClockInconsistentException</code> without
+     * detail message.
+     */
+    public ClockInconsistentException() {
+    }
+
+    /**
+     * Constructs an instance of <code>ClockInconsistentException</code> with
+     * the specified detail message.
+     * @param msg the detail message.
+     */
+    public ClockInconsistentException(String msg) {
+        super(msg);
+    }
+}

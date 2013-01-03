@@ -1,0 +1,63 @@
+/*Runs an experiment. Takes a file of similarities and develops a xD plot but
+ * without any animation. Controlled for rotation and reflection.
+ */
+package distancemodel.controlflow;
+
+import distancemodel.PlotDistances;
+import distancemodel.Model;
+import static distancemodel.GlobalParameters.*;
+
+/**
+ * @author Jeremy Reffin
+ * V2.0 20110822
+ */
+public class FastControlFlow extends ControlFlowAbs {
+
+    /***********CONSTRUCTORS AND STATIC FACOTRY METHODS*************/
+    /** Constructor.
+     * @param fileName Name of data file containing similarity data
+     * @param refTerm Name of term of interest
+     */
+    public FastControlFlow(String fileName, String refTerm) {
+        super();
+        run(fileName, refTerm);
+    }
+
+    /*********LEVEL 1 DERIVATIVE EXECUTION CONTROL METHODS**********/
+    @Override
+    protected void getSolution(Model model) {
+        double sumError = 0;
+        //calculate and plot search for best solution
+        for (int i = 0; i < FINAL_ITERATIONS; i++) {
+            sumError = model.imposeForces();   //impose force
+            model.advanceTime();  //increment time
+        }
+        
+        model.rotateCoords2D();
+        model.reflectCoords2D();
+        model.advanceTime();
+        
+        //Initialise display
+        PlotDistances plotter =
+                model.initialiseDisplay(DISPLAY_SIZE, DISPLAY_POSITION);
+
+        printDebug("Final distortion for the graph plot is : " + sumError);
+    }
+
+    /*********************UTILITY METHODS***************************/
+    /** test suite */
+    public static void main(String[] args) {
+//        FastControlFlow obj = new FastControlFlow("martin_samuel",
+//                "martin_samuel");
+        FastControlFlow obj = new FastControlFlow("wind-100nn.txt",
+                "wind");
+
+    }
+}
+/*************************FIELDS********************************/
+/***************CORE EXECUTION CONTROL METHODS******************/
+/*********LEVEL 1 DERIVATIVE EXECUTION CONTROL METHODS**********/
+/*********LEVEL 2 DERIVATIVE EXECUTION CONTROL METHODS**********/
+/*********LEVEL 3 DERIVATIVE EXECUTION CONTROL METHODS**********/
+/*********************UTILITY METHODS***************************/
+/******************STATIC INNER CLASSES*************************/

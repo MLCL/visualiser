@@ -1,0 +1,28 @@
+/*
+ * This is for use with the command line.
+ */
+
+package distancemodel;
+
+import distancemodel.controlflow.AnimatedControlFlow;
+import distancemodel.controlflow.ControlFlowAbs;
+import distancemodel.controlflow.FastControlFlow;
+
+/**
+ * @author Jeremy Reffin
+ * V2.0 20110822
+ */
+public class Main {
+
+    /**
+     * @param args args[0] = file name for term relations.
+     * args[1] = name of reference term
+     */
+    public static void main(String[] args) {
+        new Main().run("lead-30nn.txt", "lead");
+    }
+
+    public void run(String fileName, String refTerm) {
+        ControlFlowAbs obj = new FastControlFlow(fileName, refTerm);
+    }
+}

@@ -1,0 +1,56 @@
+/* Interface ofr a term
+ */
+
+package distancemodel.terms;
+
+/**
+ * @author Jeremy Reffin
+ * V2.0 20110822
+ */
+public interface TermI {
+
+    /************************Accessors******************************/
+
+    /**Methods return position before and after update, velocity, acceleration,
+     * mass, clock, and array. Also signal if term is included */
+    public double[] getPosition();
+
+    public double[] getAfterPosition();
+
+    public double [] cloneAfterPosition();
+
+    public double[] getVelocity();
+
+    public double[] getAcceleration();
+
+    public double getMass();
+
+    public int getInternalClock();
+
+    public int getArray();
+
+    public boolean isIncluded();
+
+    /************************Mutators*******************************/
+    /**Methods set position (applied to after), velocity, mass.  */
+    public void setPosition(double[] newCoords);
+
+    public void setVelocity(double[] newVelocity);
+
+    public void setMass(double newMass);
+
+    /** Set the term's internal clock
+     * @param new clock time
+     */
+    public void setInternalClock(int c);
+
+    /**Impose force and record upadated position */
+    public void imposeForce(double[] force, double damping);
+
+    /**Advance one time tick and change settings accordingly*/
+    public void advanceTime();
+
+    /**Shift coordinates (usually to impose a reference frame) */
+    public void shiftCoords(double[] shift);
+
+}
