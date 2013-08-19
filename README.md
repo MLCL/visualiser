@@ -19,7 +19,7 @@ java -cp target/Visualiser-1.0.jar visualiser.distancemodel.Main
 </code></pre>
 
 The following will appear on your screen
-https://raw.github.com/MLCL/Visualiser/master/sampledata/screen.png
+![Screenshot](sampledata/screen.png?raw=true)
 
 
 ## Running the software
