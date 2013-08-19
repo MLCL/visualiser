@@ -13,7 +13,14 @@ cd Visualiser
 mvn install
 </code></pre>
 
-The executable jar file will appear in the "target" directory.
+The executable jar file will appear in the "target" directory. To run in execute the following command
+<pre><code>
+java -cp target/Visualiser-1.0.jar visualiser.distancemodel.Main
+</code></pre>
+
+The following will appear on your screen
+https://raw.github.com/MLCL/Visualiser/master/sampledata/screen.png
+
 
 ## Running the software
 At the moment, it is not possible to configure the software without modifying its source code. The main places of interest to a new user are:
